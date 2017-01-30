@@ -9,7 +9,11 @@
     <RootNamespace>Fasetto.Word</RootNamespace>
     <AssemblyName>Fasetto.Word</AssemblyName>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+=======
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
 >>>>>>> 3e3f47c (Custom Window creation)
@@ -20,8 +24,11 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <TargetFrameworkProfile />
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
 >>>>>>> 3e3f47c (Custom Window creation)
   </PropertyGroup>
@@ -41,7 +48,11 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <DefineConstants>TRACE;RELEASE</DefineConstants>
+=======
+    <DefineConstants>TRACE</DefineConstants>
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
     <DefineConstants>TRACE</DefineConstants>
 >>>>>>> 3e3f47c (Custom Window creation)
@@ -52,9 +63,12 @@
     <ApplicationIcon>Images\Logo\icon.ico</ApplicationIcon>
   </PropertyGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
 >>>>>>> 3e3f47c (Custom Window creation)
   <ItemGroup>
@@ -62,11 +76,17 @@
       <HintPath>..\packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     <Reference Include="PropertyChanged, Version=1.52.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\packages\PropertyChanged.Fody.1.52.1\lib\netstandard10\PropertyChanged.dll</HintPath>
       <Private>False</Private>
     </Reference>
+<<<<<<< HEAD
+>>>>>>> 3e3f47c (Custom Window creation)
+=======
 >>>>>>> 3e3f47c (Custom Window creation)
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -88,6 +108,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Compile Include="Animation\AnimationSlideInDirection.cs" />
     <Compile Include="Animation\FrameworkElementAnimations.cs" />
@@ -276,10 +297,15 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
 =======
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
+<<<<<<< HEAD
+>>>>>>> 3e3f47c (Custom Window creation)
+=======
 >>>>>>> 3e3f47c (Custom Window creation)
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -294,7 +320,11 @@
       <SubType>Code</SubType>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Page Include="Styles\Scroll.xaml">
+=======
+    <Page Include="Styles\Windows.xaml">
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
     <Page Include="Styles\Windows.xaml">
 >>>>>>> 3e3f47c (Custom Window creation)
@@ -355,12 +385,15 @@
     <Resource Include="Fonts\Lato-Thin.ttf" />
     <Resource Include="Fonts\Lato-ThinItalic.ttf" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Resource Include="Fonts\fontawesome-webfont.ttf" />
     <None Include="app.manifest" />
     <None Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Fasetto.Word.csproj.vsspell" />
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
 >>>>>>> 3e3f47c (Custom Window creation)
     <None Include="packages.config" />
@@ -378,6 +411,7 @@
     <Resource Include="Images\Logo\logo.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
@@ -415,6 +449,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 =======
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -425,5 +461,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Fody.1.29.2\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.29.2\build\dotnet\Fody.targets'))" />
   </Target>
+<<<<<<< HEAD
+>>>>>>> 3e3f47c (Custom Window creation)
+=======
 >>>>>>> 3e3f47c (Custom Window creation)
 </Project>

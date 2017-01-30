@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <Weavers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FodyWeavers.xsd">
+=======
+<Weavers>
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
 <Weavers>
 >>>>>>> 3e3f47c (Custom Window creation)

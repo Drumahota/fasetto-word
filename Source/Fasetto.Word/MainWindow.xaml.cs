@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using Fasetto.Word.Core;
 using System;
+=======
+﻿using System;
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
 ﻿using System;
 >>>>>>> 3e3f47c (Custom Window creation)
@@ -30,6 +34,7 @@ namespace Fasetto.Word
             InitializeComponent();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             DataContext = new WindowViewModel(this);
         }
 
@@ -43,6 +48,9 @@ namespace Fasetto.Word
         {
             // Hide overlay if we are focused
             (DataContext as WindowViewModel).DimmableOverlayVisible = false;
+=======
+            this.DataContext = new WindowViewModel(this);
+>>>>>>> 3e3f47c (Custom Window creation)
 =======
             this.DataContext = new WindowViewModel(this);
 >>>>>>> 3e3f47c (Custom Window creation)

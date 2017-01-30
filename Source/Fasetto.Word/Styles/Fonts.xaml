@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<<<<<<< HEAD
                     xmlns:local="clr-namespace:Fasetto.Word"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
@@ -11,11 +12,23 @@
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+=======
+                    xmlns:local="clr-namespace:Fasetto.Word">
+
+    <FontFamily x:Key="LatoThin">pack://appliction;,,,/Fonts/#Lato Thin</FontFamily>
+    <FontFamily x:Key="LatoRegular">pack://appliction;,,,/Fonts/#Lato Regular</FontFamily>
+
+    <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+        <Setter Property="FontFamily" Value="{StaticResource LatoThin}" />
+>>>>>>> 3e3f47c (Custom Window creation)
     </Style>
     
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}" />
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     </Style>
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}" />
@@ -24,6 +37,7 @@
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" />
     <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}" />
 
+<<<<<<< HEAD
     <system:Double x:Key="FontSizeSmaller">10</system:Double>
     <system:Double x:Key="FontSizeSmall">12</system:Double>
     <system:Double x:Key="FontSizeRegular">14</system:Double>
@@ -44,3 +58,6 @@
     <system:String x:Key="FontAwesomeTickIcon">&#xf00c;</system:String>
     <system:String x:Key="FontAwesomeCloseIcon">&#xf00d;</system:String>
 </ResourceDictionary>
+=======
+</ResourceDictionary>
+>>>>>>> 3e3f47c (Custom Window creation)

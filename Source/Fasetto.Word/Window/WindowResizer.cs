@@ -1,13 +1,20 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
+=======
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Interop;
+>>>>>>> 3e3f47c (Custom Window creation)
 
 namespace Fasetto.Word
 {
     /// <summary>
+<<<<<<< HEAD
     /// The dock position of the window
     /// </summary>
     public enum WindowDockPosition
@@ -48,6 +55,8 @@ namespace Fasetto.Word
 
 
     /// <summary>
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     /// Fixes the issue with Windows of Style <see cref="WindowStyle.None"/> covering the taskbar
     /// </summary>
     public class WindowResizer
@@ -59,6 +68,7 @@ namespace Fasetto.Word
         /// </summary>
         private Window mWindow;
 
+<<<<<<< HEAD
         /// <summary>
         /// The last calculated available screen size
         /// </summary>
@@ -92,6 +102,11 @@ namespace Fasetto.Word
         #endregion
 
         #region DLL Imports
+=======
+        #endregion
+
+        #region Dll Imports
+>>>>>>> 3e3f47c (Custom Window creation)
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -103,6 +118,7 @@ namespace Fasetto.Word
         [DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr MonitorFromPoint(POINT pt, MonitorOptions dwFlags);
 
+<<<<<<< HEAD
         [DllImport("user32.dll")]
         static extern IntPtr MonitorFromWindow(IntPtr hwnd, MonitorOptions dwFlags);
 
@@ -147,6 +163,8 @@ namespace Fasetto.Word
         /// </summary>
         public Rect CurrentScreenSize => mScreenSize;
 
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
         #endregion
 
         #region Constructor
@@ -162,10 +180,13 @@ namespace Fasetto.Word
 
             // Listen out for source initialized to setup
             mWindow.SourceInitialized += Window_SourceInitialized;
+<<<<<<< HEAD
 
             // Monitor for edge docking
             mWindow.SizeChanged += Window_SizeChanged;
             mWindow.LocationChanged += Window_LocationChanged;
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
         }
 
         #endregion
@@ -193,6 +214,7 @@ namespace Fasetto.Word
 
         #endregion
 
+<<<<<<< HEAD
         #region Edge Docking
 
         /// <summary>
@@ -279,6 +301,9 @@ namespace Fasetto.Word
         #endregion
 
         #region Windows Message Pump
+=======
+        #region Windows Proc
+>>>>>>> 3e3f47c (Custom Window creation)
 
         /// <summary>
         /// Listens out for all windows messages for this window
@@ -294,6 +319,7 @@ namespace Fasetto.Word
             switch (msg)
             {
                 // Handle the GetMinMaxInfo of the Window
+<<<<<<< HEAD
                 case 0x0024: // WM_GETMINMAXINFO
                     WmGetMinMaxInfo(hwnd, lParam);
                     handled = true;
@@ -310,6 +336,12 @@ namespace Fasetto.Word
                     mBeingMoved = false;
                     WindowFinishedMove();
                     break;
+=======
+                case 0x0024:/* WM_GETMINMAXINFO */
+                    WmGetMinMaxInfo(hwnd, lParam);
+                    handled = true;
+                    break;
+>>>>>>> 3e3f47c (Custom Window creation)
             }
 
             return (IntPtr)0;
@@ -319,12 +351,17 @@ namespace Fasetto.Word
 
         /// <summary>
         /// Get the min/max window size for this window
+<<<<<<< HEAD
         /// Correctly accounting for the task bar size and position
+=======
+        /// Correctly accounting for the taskbar size and position
+>>>>>>> 3e3f47c (Custom Window creation)
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="lParam"></param>
         private void WmGetMinMaxInfo(System.IntPtr hwnd, System.IntPtr lParam)
         {
+<<<<<<< HEAD
             // Get the point position to determine what screen we are on
             GetCursorPos(out var lMousePosition);
 
@@ -446,6 +483,45 @@ namespace Fasetto.Word
     #region DLL Helper Structures
 
     public enum MonitorOptions : uint
+=======
+            POINT lMousePosition;
+            GetCursorPos(out lMousePosition);
+
+            IntPtr lPrimaryScreen = MonitorFromPoint(new POINT(0, 0), MonitorOptions.MONITOR_DEFAULTTOPRIMARY);
+            MONITORINFO lPrimaryScreenInfo = new MONITORINFO();
+            if (GetMonitorInfo(lPrimaryScreen, lPrimaryScreenInfo) == false)
+            {
+                return;
+            }
+
+            IntPtr lCurrentScreen = MonitorFromPoint(lMousePosition, MonitorOptions.MONITOR_DEFAULTTONEAREST);
+
+            MINMAXINFO lMmi = (MINMAXINFO)Marshal.PtrToStructure(lParam, typeof(MINMAXINFO));
+
+            if (lPrimaryScreen.Equals(lCurrentScreen) == true)
+            {
+                lMmi.ptMaxPosition.X = lPrimaryScreenInfo.rcWork.Left;
+                lMmi.ptMaxPosition.Y = lPrimaryScreenInfo.rcWork.Top;
+                lMmi.ptMaxSize.X = lPrimaryScreenInfo.rcWork.Right - lPrimaryScreenInfo.rcWork.Left;
+                lMmi.ptMaxSize.Y = lPrimaryScreenInfo.rcWork.Bottom - lPrimaryScreenInfo.rcWork.Top;
+            }
+            else
+            {
+                lMmi.ptMaxPosition.X = lPrimaryScreenInfo.rcMonitor.Left;
+                lMmi.ptMaxPosition.Y = lPrimaryScreenInfo.rcMonitor.Top;
+                lMmi.ptMaxSize.X = lPrimaryScreenInfo.rcMonitor.Right - lPrimaryScreenInfo.rcMonitor.Left;
+                lMmi.ptMaxSize.Y = lPrimaryScreenInfo.rcMonitor.Bottom - lPrimaryScreenInfo.rcMonitor.Top;
+            }
+
+            // Now we have the max size, allow the host to tweak as needed
+            Marshal.StructureToPtr(lMmi, lParam, true);
+        }
+    }
+
+    #region Dll Helper Structures
+
+    enum MonitorOptions : uint
+>>>>>>> 3e3f47c (Custom Window creation)
     {
         MONITOR_DEFAULTTONULL = 0x00000000,
         MONITOR_DEFAULTTOPRIMARY = 0x00000001,
@@ -456,18 +532,26 @@ namespace Fasetto.Word
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
     public class MONITORINFO
     {
+<<<<<<< HEAD
 #pragma warning disable IDE1006 // Naming Styles
         public int CBSize = Marshal.SizeOf(typeof(MONITORINFO));
         public Rectangle RCMonitor = new Rectangle();
         public Rectangle RCWork = new Rectangle();
         public int DWFlags = 0;
 #pragma warning restore IDE1006 // Naming Styles
+=======
+        public int cbSize = Marshal.SizeOf(typeof(MONITORINFO));
+        public Rectangle rcMonitor = new Rectangle();
+        public Rectangle rcWork = new Rectangle();
+        public int dwFlags = 0;
+>>>>>>> 3e3f47c (Custom Window creation)
     }
 
 
     [StructLayout(LayoutKind.Sequential)]
     public struct Rectangle
     {
+<<<<<<< HEAD
 #pragma warning disable IDE1006 // Naming Styles
         public int Left, Top, Right, Bottom;
 #pragma warning restore IDE1006 // Naming Styles
@@ -478,12 +562,23 @@ namespace Fasetto.Word
             Top = top;
             Right = right;
             Bottom = bottom;
+=======
+        public int Left, Top, Right, Bottom;
+
+        public Rectangle(int left, int top, int right, int bottom)
+        {
+            this.Left = left;
+            this.Top = top;
+            this.Right = right;
+            this.Bottom = bottom;
+>>>>>>> 3e3f47c (Custom Window creation)
         }
     }
 
     [StructLayout(LayoutKind.Sequential)]
     public struct MINMAXINFO
     {
+<<<<<<< HEAD
 #pragma warning disable IDE1006 // Naming Styles
         public POINT PointReserved;
         public POINT PointMaxSize;
@@ -491,6 +586,13 @@ namespace Fasetto.Word
         public POINT PointMinTrackSize;
         public POINT PointMaxTrackSize;
 #pragma warning restore IDE1006 // Naming Styles
+=======
+        public POINT ptReserved;
+        public POINT ptMaxSize;
+        public POINT ptMaxPosition;
+        public POINT ptMinTrackSize;
+        public POINT ptMaxTrackSize;
+>>>>>>> 3e3f47c (Custom Window creation)
     };
 
     [StructLayout(LayoutKind.Sequential)]
@@ -499,6 +601,7 @@ namespace Fasetto.Word
         /// <summary>
         /// x coordinate of point.
         /// </summary>
+<<<<<<< HEAD
 #pragma warning disable IDE1006 // Naming Styles
         public int X;
 #pragma warning restore IDE1006 // Naming Styles
@@ -509,12 +612,20 @@ namespace Fasetto.Word
 #pragma warning disable IDE1006 // Naming Styles
         public int Y;
 #pragma warning restore IDE1006 // Naming Styles
+=======
+        public int X;
+        /// <summary>
+        /// y coordinate of point.
+        /// </summary>
+        public int Y;
+>>>>>>> 3e3f47c (Custom Window creation)
 
         /// <summary>
         /// Construct a point of coordinates (x,y).
         /// </summary>
         public POINT(int x, int y)
         {
+<<<<<<< HEAD
             X = x;
             Y = y;
         }
@@ -522,6 +633,10 @@ namespace Fasetto.Word
         public override string ToString()
         {
             return $"{X} {Y}";
+=======
+            this.X = x;
+            this.Y = y;
+>>>>>>> 3e3f47c (Custom Window creation)
         }
     }
 

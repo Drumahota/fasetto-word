@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 namespace Fasetto.Word.Properties {
     
     
@@ -19,6 +20,23 @@ namespace Fasetto.Word.Properties {
         
         public static Settings Default {
             get {
+=======
+namespace Fasetto.Word.Properties
+{
+
+
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+
+        public static Settings Default
+        {
+            get
+            {
+>>>>>>> 3e3f47c (Custom Window creation)
                 return defaultInstance;
             }
         }

@@ -1,14 +1,20 @@
+<<<<<<< HEAD
 ﻿using Fasetto.Word.Core;
 using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+=======
+﻿using PropertyChanged;
+using System.ComponentModel;
+>>>>>>> 3e3f47c (Custom Window creation)
 
 namespace Fasetto.Word
 {
     /// <summary>
     /// A base view model that fires Property Changed events as needed
     /// </summary>
+<<<<<<< HEAD
     public class BaseViewModel : INotifyPropertyChanged
     {
         #region Protected Members
@@ -21,6 +27,11 @@ namespace Fasetto.Word
 
         #endregion
 
+=======
+    [ImplementPropertyChanged]
+    public class BaseViewModel : INotifyPropertyChanged
+    {
+>>>>>>> 3e3f47c (Custom Window creation)
         /// <summary>
         /// The event that is fired when any child property changes its value
         /// </summary>
@@ -34,6 +45,7 @@ namespace Fasetto.Word
         {
             PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
+<<<<<<< HEAD
 
         #region Command Helpers
 
@@ -107,5 +119,7 @@ namespace Fasetto.Word
         }
 
         #endregion
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     }
 }

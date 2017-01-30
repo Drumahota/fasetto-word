@@ -17,6 +17,7 @@
     <Color x:Key="ForegroundLight">#ffffff</Color>
     <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}" />
 
+<<<<<<< HEAD
     <Color x:Key="ForegroundDark">#bdbdbd</Color>
     <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDark}" />
 
@@ -47,4 +48,6 @@
     <Color x:Key="WordGreen">#00c541</Color>
     <SolidColorBrush x:Key="WordGreenBrush" Color="{StaticResource WordGreen}" />
 
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
 </ResourceDictionary>

@@ -6,7 +6,10 @@
             <!-- Order is important -->
             <ResourceDictionary Source="Colors.xaml" />
             <ResourceDictionary Source="Fonts.xaml" />
+<<<<<<< HEAD
             <ResourceDictionary Source="Texts.xaml" />
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
         </ResourceDictionary.MergedDictionaries>
 
     <!-- Hoverless button -->
@@ -29,7 +32,11 @@
     <Style TargetType="{x:Type Button}" x:Key="SystemIconButton" BasedOn="{StaticResource Hoverless}">
 
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+<<<<<<< HEAD
         <Setter Property="Margin" Value="10" />
+=======
+        <Setter Property="Padding" Value="10" />
+>>>>>>> 3e3f47c (Custom Window creation)
 
     </Style>
 
@@ -76,6 +83,7 @@
         </Style.Triggers>
         
     </Style>
+<<<<<<< HEAD
 
     <!-- Regular button -->
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
@@ -312,4 +320,7 @@
         </Setter>
     </Style>
 
+=======
+    
+>>>>>>> 3e3f47c (Custom Window creation)
 </ResourceDictionary>

@@ -4,7 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fasetto.Word"
+<<<<<<< HEAD
         xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -13,8 +16,11 @@
         Icon="Images/Logo/logo-small.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
+<<<<<<< HEAD
         Deactivated="AppWindow_Deactivated"
         Activated="AppWindow_Activated"
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
         Title="Welcome, friend!" Height="600" Width="900">
 
     <Window.Resources>
@@ -22,6 +28,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
+<<<<<<< HEAD
                         <!-- Outer border with the drop shadow margin -->
                         <Border Padding="{Binding OuterMarginSize, FallbackValue=0}" BorderBrush="{StaticResource ForegroundDarkBrush}" BorderThickness="{Binding FlatBorderThickness}">
 
@@ -34,26 +41,47 @@
                                         CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
                                         BorderBrush="{StaticResource WordOrangeBrush}" />
 
+=======
+                        <!-- Outer border with the dropshadow margin -->
+                        <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
+                            
+                            <!-- Main window outline -->
+                            <Grid>
+
+>>>>>>> 3e3f47c (Custom Window creation)
                                 <!-- Opacity mask for corners on grid -->
                                 <Border x:Name="Container"
                                         Background="{StaticResource BackgroundLightBrush}"
                                         CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" />
 
+<<<<<<< HEAD
                                 <!-- Window border and drop shadow -->
                                 <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
                                     Background="{StaticResource ForegroundLightBrush}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="0.5" Opacity="0.2" />
+=======
+                                <!-- Window border and dropshadown -->
+                                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
+                                    Background="{Binding ForegroundLightBrush, FallbackValue=White}">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
+>>>>>>> 3e3f47c (Custom Window creation)
                                     </Border.Effect>
                                 </Border>
 
                                 <!-- The main window content -->
                                 <Grid>
+<<<<<<< HEAD
 
+=======
+                                    
+>>>>>>> 3e3f47c (Custom Window creation)
                                     <!-- Corner clipping -->
                                     <Grid.OpacityMask>
                                         <VisualBrush Visual="{Binding ElementName=Container}" />
                                     </Grid.OpacityMask>
+<<<<<<< HEAD
 
                                     <Grid.RowDefinitions>
 
@@ -63,11 +91,24 @@
                                         <!-- Internet Connection Bar -->
                                         <RowDefinition Height="Auto" />
 
+=======
+                                    
+                                    <Grid.RowDefinitions>
+                                    
+                                        <!-- Title Bar -->
+                                        <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}" />
+                                        <!-- Drop shadow -->
+                                        <RowDefinition Height="Auto" />
+>>>>>>> 3e3f47c (Custom Window creation)
                                         <!-- Window Content -->
                                         <RowDefinition Height="*" />
 
                                     </Grid.RowDefinitions>
+<<<<<<< HEAD
 
+=======
+                                    
+>>>>>>> 3e3f47c (Custom Window creation)
                                     <!-- Title Bar -->
                                     <Grid Grid.Column="0" Panel.ZIndex="1">
 
@@ -80,11 +121,16 @@
                                             <ColumnDefinition Width="Auto" />
 
                                         </Grid.ColumnDefinitions>
+<<<<<<< HEAD
 
+=======
+                                        
+>>>>>>> 3e3f47c (Custom Window creation)
                                         <!-- Icon -->
                                         <Button Style="{StaticResource SystemIconButton}" Command="{Binding MenuCommand}">
                                             <Image Source="/Images/Logo/logo-small.png" />
                                         </Button>
+<<<<<<< HEAD
 
                                         <!-- Title -->
                                         <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
@@ -99,12 +145,21 @@
                                             </StackPanel>
                                         </Viewbox>
 
+=======
+                                        
+                                        <!-- Title -->
+                                        <Viewbox Grid.Column="1" Margin="0">
+                                            <TextBlock Style="{StaticResource HeaderText}" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title, FallbackValue='Welcome, friend!'}" />
+                                        </Viewbox>
+                                        
+>>>>>>> 3e3f47c (Custom Window creation)
                                         <!-- Window Buttons -->
                                         <StackPanel Grid.Column="2" Orientation="Horizontal">
                                             <Button Command="{Binding MinimizeCommand}" Style="{StaticResource WindowControlButton}" Content="_" />
                                             <Button Command="{Binding MaximizeCommand}" Style="{StaticResource WindowControlButton}" Content="[ ]" />
                                             <Button Command="{Binding CloseCommand}" Style="{StaticResource WindowCloseButton}" Content="X" />
                                         </StackPanel>
+<<<<<<< HEAD
 
                                     </Grid>
 
@@ -136,6 +191,39 @@
 
                                 </Grid>
 
+=======
+                                        
+                                    </Grid>
+                                    
+                                    <!-- Drop shadow -->
+                                    <Border Grid.Row="1" Height="6" BorderThickness="0 0.2 0 0">
+                                        <!-- Underline -->
+                                        <Border.BorderBrush>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0">
+                                                <GradientStop Color="{StaticResource ForegroundLight}" Offset="0.0" />
+                                                <GradientStop Color="{StaticResource ForegroundMain}" Offset="0.5" />
+                                                <GradientStop Color="{StaticResource ForegroundLight}" Offset="1.0" />
+                                            </LinearGradientBrush>
+                                        </Border.BorderBrush>
+                                        
+                                        <!-- Drop shadow -->
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0, 1">
+                                                <GradientStop Color="{StaticResource BackgroundVeryLight}" Offset="0.0" />
+                                                <GradientStop Color="{StaticResource ForegroundLight}" Offset="1.0" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        
+                                    </Border>
+                                    
+                                    <!-- Page Content -->
+                                    <Border Grid.Row="2" Padding="{Binding InnerContentPadding}">
+                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                    </Border>
+                                    
+                                </Grid>
+                                
+>>>>>>> 3e3f47c (Custom Window creation)
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -153,6 +241,7 @@
             />
     </WindowChrome.WindowChrome>
 
+<<<<<<< HEAD
     <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
 
@@ -199,4 +288,9 @@
         </Grid>
     </Border>
 
+=======
+    <Grid Background="{StaticResource ForegroundLightBrush}">
+    </Grid>
+    
+>>>>>>> 3e3f47c (Custom Window creation)
 </Window>

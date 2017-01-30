@@ -8,6 +8,7 @@
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Margin" Value="0 6" />
     </Style>
+<<<<<<< HEAD
 
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
 
@@ -170,5 +171,7 @@
         </Style.Triggers>
 
     </Style>
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     
 </ResourceDictionary>

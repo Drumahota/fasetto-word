@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Dna;
 using Fasetto.Word.Core;
 using Fasetto.Word.Relational;
@@ -9,6 +10,15 @@ using System.Windows;
 using static Dna.FrameworkDI;
 using static Fasetto.Word.Core.CoreDI;
 using static Fasetto.Word.DI;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
+>>>>>>> 3e3f47c (Custom Window creation)
 
 namespace Fasetto.Word
 {
@@ -17,6 +27,7 @@ namespace Fasetto.Word
     /// </summary>
     public partial class App : Application
     {
+<<<<<<< HEAD
         /// <summary>
         /// Custom startup so we load our IoC immediately before anything else
         /// </summary>
@@ -90,5 +101,7 @@ namespace Fasetto.Word
                     ViewModelApplication.ServerReachable = result;
                 });
         }
+=======
+>>>>>>> 3e3f47c (Custom Window creation)
     }
 }
